@@ -48,7 +48,7 @@ TEST_CASE("raises alerts when max is greater than threshold") {
 
     float numberset[] = {99.8, 34.2, 4.5};
     int setlength = sizeof(numberset) / sizeof(numberset[0]);
-    computedStats = compute_statistics(numberset, setlength);
+    Stats computedStats = compute_statistics(numberset, setlength);
 
     float maxThreshold = 10.2;
     check_and_alert(maxThreshold, alerters, computedStats);
@@ -59,7 +59,7 @@ TEST_CASE("raises alerts when max is greater than threshold") {
     REQUIRE(ledAlertCallCount == 1);
     
     maxThreshold = 100;
-    Stats computedStats = compute_statistics(numberset, setlength);
+    computedStats = compute_statistics(numberset, setlength);
     check_and_alert(maxThreshold, alerters, computedStats);
     REQUIRE(emailAlertCallCount == 0);
     REQUIRE(ledAlertCallCount == 0);
