@@ -32,7 +32,12 @@ TEST_CASE("average is NaN for empty array") {
     REQUIRE(computedStats.average != computedStats.average);
     REQUIRE(computedStats.max != computedStats.max);
     REQUIRE(computedStats.min != computedStats.min);
-
+    
+    float numberset[] = {99.8, 34.2, 4.5};
+    Stats computedStats = compute_statistics(numberset, 0);
+    REQUIRE(computedStats.average != computedStats.average);
+    REQUIRE(computedStats.max != computedStats.max);
+    REQUIRE(computedStats.min != computedStats.min);
     //Use https://stackoverflow.com/questions/1923837/how-to-use-nan-and-inf-in-c
 }
 
