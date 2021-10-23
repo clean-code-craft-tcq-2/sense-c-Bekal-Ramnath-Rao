@@ -20,4 +20,5 @@ Take care not to leave behind any compiler warnings in your solution.
 
 ## Code is updated for Evaluation 
 Let me know your feedback on the code.
-Learning : When feedback branch is updated with some change a pull request is created saing feedback i ahead with 1 commit.
+
+Learning : When feedback branch is updated with changes in any one of the file, a pull request is created saying feedback branch is ahead with 1 commit.
