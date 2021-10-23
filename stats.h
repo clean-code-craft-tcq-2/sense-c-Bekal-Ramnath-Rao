@@ -1,8 +1,13 @@
-
+#ifndef STATS_H
+#define STATS_H
+/* function declared to find out average,min and max of an array*/
 struct Stats compute_statistics(const float* numberset, int setlength);
 
-typedef void (*alerter_funcptr)();
-void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stats computedStats);
+/* structure used to hold avrage,min and max of an array*/
+struct Stats{
+    float average;
+    float min;
+    float max;
+};
 
-extern int emailAlertCallCount;
-extern int ledAlertCallCount;
+#endif
