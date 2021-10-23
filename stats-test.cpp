@@ -21,7 +21,7 @@ TEST_CASE("average is NaN for empty array") {
     Stats computedStats = compute_statistics(0, 0);
     //All fields of computedStats (average, max, min) must be
     //NAN (not-a-number), as defined in math.h
-    REQUIRE(computedStats.average == NAN);
+    REQUIRE(computedStats.average == nan);
     REQUIRE(computedStats.max == NAN);
     REQUIRE(computedStats.min == NAN);
 
