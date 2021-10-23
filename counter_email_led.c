@@ -28,8 +28,3 @@ void check_and_alert(float Threshold, alerter_funcptr alerters[], struct Stats c
 		(*alerters[1])();
 	}
 }
-
-int main()
-{
-	return 0;
-}
