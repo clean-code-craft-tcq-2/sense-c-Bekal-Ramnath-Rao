@@ -79,18 +79,18 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
 
     if(setlength != 0 || numberset != NULL )
     {
-	    sum = SUM(numberset,setlength);
-	    s.average = average_numberset(sum,setlength);
-	    mn_mx = Minimum_Maximum(numberset,setlength);
-	    s.min = mn_mx.min;
-	    s.max = mn_mx.max;
-	}
-	else
-	{
-		s.average = NAN;
-		s.min = NAN;
-		s.max = NAN;
-	}
+	sum = SUM(numberset,setlength);
+	s.average = average_numberset(sum,setlength);
+	mn_mx = Minimum_Maximum(numberset,setlength);
+	s.min = mn_mx.min;
+	s.max = mn_mx.max;
+     }
+     else
+     {
+	s.average = NAN;
+	s.min = NAN;
+	s.max = NAN;
+     }
 
     return s;
 }
