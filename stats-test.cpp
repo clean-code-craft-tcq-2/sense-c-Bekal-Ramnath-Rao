@@ -55,6 +55,7 @@ TEST_CASE("raises alerts when max is greater than threshold") {
     
     maxThreshold = 100;
     computedStats = compute_statistics(numberset, setlength);
+    check_and_alert(maxThreshold, alerters, computedStats);
     REQUIRE(emailAlertCallCount == 0);
     REQUIRE(ledAlertCallCount == 0);
 }
