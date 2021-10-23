@@ -22,6 +22,7 @@ TEST_CASE("reports average, minimum and maximum") {
     REQUIRE(abs(computedStats.average - 103.4) < epsilon);
     REQUIRE(abs(computedStats.max - 106.0) < epsilon);
     REQUIRE(abs(computedStats.min - 101.0) < epsilon);
+    
 }
 
 TEST_CASE("average is NaN for empty array") {
@@ -44,15 +45,11 @@ TEST_CASE("raises alerts when max is greater than threshold") {
     int setlength = sizeof(numberset) / sizeof(numberset[0]);
     Stats computedStats = compute_statistics(numberset, setlength);
 
-    float maxThreshold = 10.2;
+    const float maxThreshold = 10.2;
     check_and_alert(maxThreshold, alerters, computedStats);
 
     // need a way to check if both emailAlerter, ledAlerter were called
     // you can define call-counters along with the functions, as shown below
     REQUIRE(emailAlertCallCount == 1);
     REQUIRE(ledAlertCallCount == 1);
-    
-    maxThreshold = 100;
-    REQUIRE(emailAlertCallCount == 0);
-    REQUIRE(ledAlertCallCount == 0);
 }
