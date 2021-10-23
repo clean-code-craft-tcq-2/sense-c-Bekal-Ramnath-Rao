@@ -15,6 +15,13 @@ TEST_CASE("reports average, minimum and maximum") {
     REQUIRE(abs(computedStats.average - 4.525) < epsilon);
     REQUIRE(abs(computedStats.max - 8.9) < epsilon);
     REQUIRE(abs(computedStats.min - 1.5) < epsilon);
+    
+    float numberset2[] = {101.0,102.0,103.0,105.0,106.0};
+    setlength = sizeof(numberset2) / sizeof(numberset2[0]);
+    computedStats = compute_statistics(numberset2, setlength);
+    REQUIRE(abs(computedStats.average - 103.4) < epsilon);
+    REQUIRE(abs(computedStats.max - 106.0) < epsilon);
+    REQUIRE(abs(computedStats.min - 101.0) < epsilon);
 }
 
 TEST_CASE("average is NaN for empty array") {
