@@ -54,6 +54,6 @@ TEST_CASE("raises alerts when max is greater than threshold") {
     REQUIRE(ledAlertCallCount == 1);
     
     maxThreshold = 100;
-    REQUIRE(emailAlertCallCount == 0);
-    REQUIRE(ledAlertCallCount == 0);
+    REQUIRE(emailAlertCallCount == 1);
+    REQUIRE(ledAlertCallCount == 1);
 }
