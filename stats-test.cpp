@@ -17,9 +17,8 @@ TEST_CASE("reports average, minimum and maximum") {
     REQUIRE(abs(computedStats.min - 1.5) < epsilon);
     
     float numberset2[] = {101.0,102.0,103.0,105.0,106.0};
-    setlength = sizeof(numberset) / sizeof(numberset[0]);
+    setlength = sizeof(numberset2) / sizeof(numberset2[0]);
     computedStats = compute_statistics(numberset2, setlength);
-    epsilon = 0.001;
     REQUIRE(abs(computedStats.average - 103.4) < epsilon);
     REQUIRE(abs(computedStats.max - 106.0) < epsilon);
     REQUIRE(abs(computedStats.min - 101.0) < epsilon);
