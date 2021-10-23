@@ -34,7 +34,7 @@ TEST_CASE("average is NaN for empty array") {
     REQUIRE(computedStats.min != computedStats.min);
     
     float numberset[] = {99.8, 34.2, 4.5};
-    Stats computedStats = compute_statistics(numberset, 0);
+    computedStats = compute_statistics(numberset, 0);
     REQUIRE(computedStats.average != computedStats.average);
     REQUIRE(computedStats.max != computedStats.max);
     REQUIRE(computedStats.min != computedStats.min);
@@ -59,7 +59,7 @@ TEST_CASE("raises alerts when max is greater than threshold") {
     REQUIRE(ledAlertCallCount == 1);
     
     maxThreshold = 100;
-    computedStats = compute_statistics(numberset, setlength);
+    Stats computedStats = compute_statistics(numberset, setlength);
     check_and_alert(maxThreshold, alerters, computedStats);
     REQUIRE(emailAlertCallCount == 0);
     REQUIRE(ledAlertCallCount == 0);
