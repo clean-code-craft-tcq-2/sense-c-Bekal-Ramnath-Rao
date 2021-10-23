@@ -76,7 +76,6 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
     struct Stats s;
     struct min_max mn_mx;
     float sum=0;
-    int i=0;
 
     if(setlength != 0)
     {
