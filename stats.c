@@ -77,7 +77,7 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
     struct min_max mn_mx;
     float sum=0;
 
-    if(setlength != 0 || numberset != NULL )
+    if(setlength != 0 && numberset != NULL )
     {
 	sum = SUM(numberset,setlength);
 	s.average = average_numberset(sum,setlength);
